@@ -1,3 +1,4 @@
+
 from wk1.point import Point
 
 
@@ -21,6 +22,15 @@ class Rectangle:
         perimeter = (self.width + self.height) * 2
         return perimeter
 
+    def flip(self):
+        self.width, self.height = self.height, self.width
+
+    def test(self, point):
+        if self.corner.x < point.x < self.corner.x + self.width:
+            print("in rectangle")
+        else:
+            print("not in rectangle")
+
 
 r = Rectangle(Point(0, 0), 10, 5)
-print(r.perimeter())
+print(r.test(Point(1, 1)))

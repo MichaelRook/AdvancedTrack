@@ -1,3 +1,4 @@
+
 from wk1.point import Point
 
 
@@ -21,6 +22,11 @@ class Rectangle:
         perimeter = (self.width + self.height) * 2
         return perimeter
 
+    def flip(self):
+        self.width, self.height = self.height, self.width
+
 
 r = Rectangle(Point(0, 0), 10, 5)
-print(r.perimeter())
+print(r.width, r.height)
+r.flip()
+print(r.width, r.height)
